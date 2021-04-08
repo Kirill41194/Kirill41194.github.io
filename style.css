@@ -1,0 +1,2337 @@
+body{
+
+font-family: 'Work Sans', sans-serif;
+overflow-x: hidden;
+color: #fff;
+
+}
+html, body {padding:0; margin:0;}
+a{
+text-decoration: none;
+}
+ul {
+  display: flex;
+  position: absolute;
+}
+li{
+  display: inline-block;
+}
+
+@media only screen and (min-width: 1224px)
+{
+
+
+.header{
+top: 0px;
+left: 0px;
+height: 70px;
+width: 100%;
+position:absolute;
+height: 100px;
+position: fixed;
+background: #fbfbfb;
+z-index: 4;
+}
+
+
+
+
+
+
+
+.log{
+position: absolute;
+width: 40px;
+height: auto;
+left: 50px;
+font-size: 28px;
+line-height: 33px;
+text-align: center;
+letter-spacing: 0.03em;
+color: #000;
+border: 5px solid black;
+box-shadow: 5px 5px 5px ,black;
+color: #fff;
+background-color: black;
+border-radius: 5px;
+box-shadow: 5px 5px 17px black;
+}
+.logo{
+
+position: absolute;
+top: 5px;
+width: 150px;
+height: 42px;
+left: 110px;
+text-shadow: 5px 5px 17px black;
+font-size: 28px;
+line-height: 33px;
+text-align: center;
+letter-spacing: 0.03em;
+color: #000;
+}
+.GL{
+position: absolute;
+width: 70px;
+font-size: 13px;
+text-align: center;
+box-shadow: 5px 5px 17px black;
+color: #fff;
+left: 500px;
+padding: 10px;
+background-color: #000;
+border-radius: 15px;
+top: 3px;
+}
+.GL:hover{
+  color: #000;
+  background-color: #fff;
+}
+
+.TV{
+position: absolute;
+width: 70px;
+font-size: 13px;
+text-align: center;
+box-shadow: 5px 5px 17px black;
+color: #fff;
+left: 700px;
+padding: 10px;
+background-color: #000;
+border-radius: 15px;
+top:3px;
+}
+.TV:hover{
+  color: #000;
+  background-color: #fff;
+}
+
+.PM{
+position: absolute;
+width: 70px;
+font-size: 13px;
+text-align: center;
+box-shadow: 5px 5px 17px black;
+color: #fff;
+left: 900px;
+padding: 10px;
+background-color: #000;
+border-radius: 15px;
+top: 3px;
+}
+.PM:hover{
+  color: #000;
+  background-color: #fff;
+}
+.shop{
+  position: absolute;
+  left: 1400px;
+}
+.shop:hover{
+  border-bottom: 3px solid #000;
+}
+.search{
+  position: absolute;
+  left: 1350px;
+  top: 2px;
+}
+.search:hover{
+  border-bottom: 3px solid #000;
+
+}
+.user{
+  position: absolute;
+  left: 1290px;
+  top: -2px;
+}
+.user:hover{
+  border-bottom: 3px solid #000;
+}
+
+
+
+
+
+.one{
+	background-image: url("images/88.jpg");
+	height: 400px;
+	width: 100%;
+  background-size: cover;
+}
+
+}
+.two{
+	background-image: url("images/87.jpg");
+	height: 350px;
+  background-size: cover;
+	width: 100%;
+}
+
+.three{
+	background-image: url("images/85.jpg");
+  object-fit: cover;
+	height: 400px;
+	width:100%;
+}
+
+
+}
+
+.slider {
+      position: relative;
+      overflow: hidden;
+			width: 100%;
+      object-fit: cover;
+			top: 50px;
+    }
+.slider__wrapper {
+      display: flex;
+      transition: transform 0.9s ease;
+    }
+
+.slider__item {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  .slider__control {
+      position: absolute;
+      top: 45%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      color: #fff;
+      text-align: center;
+      opacity: 0.5;
+      height: 50px;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, .5);
+    }
+
+    .slider__control:hover,
+    .slider__control:focus {
+      color: #fff;
+      text-decoration: none;
+      outline: 0;
+      opacity: .9;
+    }
+
+    .slider__control_left {
+      left: 0;
+    }
+
+    .slider__control_right {
+      right: 0;
+    }
+
+    .slider__control::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: transparent no-repeat center center;
+      background-size: 100% 100%;
+    }
+
+    .slider__control_left::before {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    }
+
+    .slider__control_right::before {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    }
+
+    .slider__item>div {
+      line-height: 250px;
+      font-size: 100px;
+      text-align: center;
+    }
+
+
+
+
+
+
+/*/Преимущества/*/
+.quality{
+	top: -30px;
+	position: absolute;
+	max-width: 100%;
+	color: black;
+	background-color: #c8c8c8;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.discount{
+position: absolute;
+width: 70px;
+height: auto;
+left: 100px;
+top: 600px;
+border: 4px solid #c8c8c8;
+background-color: #c8c8c8;
+padding: 40px;
+padding-top: 100px;
+border-radius: 30px;
+box-shadow: 5px 5px 17px black;
+}
+.forquality{
+	position: absolute;
+	top: 615px;
+	left: 140px;
+	text-align: center;
+}
+.discounts{
+color: black;
+}
+
+.twoquality{
+	position: absolute;
+	top: 615px;
+	left: 670px;
+	text-align: center;
+}
+
+.order{
+	position: absolute;
+	width: 70px;
+	height: auto;
+	left: 630px;
+	top: 600px;
+	border: 4px solid #c8c8c8;
+	background-color: #c8c8c8;
+	padding: 40px;
+	padding-top: 100px;
+	border-radius: 30px;
+	box-shadow: 5px 5px 17px black;
+}
+.orders{
+	color: black;
+}
+.gh{
+	position: absolute;
+	width: 70px;
+	height: auto;
+	left: 1230px;
+	top: 600px;
+	border: 4px solid #c8c8c8;
+	background-color: #c8c8c8;
+	padding: 40px;
+	padding-top: 100px;
+	border-radius: 30px;
+	box-shadow: 5px 5px 17px black;
+}
+.gj{
+	position: absolute;
+	top: 615px;
+	left: 1280px;
+	text-align: center;
+}
+.gk{
+color: #000;
+}
+
+
+/*/TV/*/
+.type{
+	position: absolute;
+	top: 860px;
+	background-image: url("images/34.jpg");
+	width: 100%;
+	height: 790px;
+  margin:auto;
+
+
+}
+
+.TTVV{
+	position: absolute;
+left: 640px;
+color: #fbfbfb;
+font-size: 40px;
+
+}
+
+.TTVVBUY{
+	text-align: center;
+	top: 200px;
+	left: 750px;
+	border: 1px solid #fff;
+	border-radius: 30px;
+	background-color: #fff;
+	font-size: 14px;
+	padding-right: 17px;
+}
+.TTVVbuy{
+	text-decoration: none;
+	text-align: center;
+	color: black;
+}
+
+.sup{
+	left: 550px;
+	top: 210px;
+}
+.supp{
+	text-decoration: underline;
+	color: #fff;
+}
+.supp:hover{
+	text-decoration: none;
+}
+
+
+
+/*/Ноутбук/*/
+.nout{
+	position: absolute;
+	top: 1650px;
+	background-image: url("images/02.jpg");
+width: 100%;
+  background-size: cover;
+	height: 800px;
+}
+.rog{
+	text-align: center;
+	font-size: 40px;
+  margin: 20px auto;
+  color: white;
+
+}
+
+.ROG{
+	font-size: 14px;
+	text-align: center;
+	text-transform: uppercase;
+  margin: 20px auto;
+  color: white;
+  border-radius: 5px;
+	padding: 10px;
+	width: 80px;
+}
+
+.btnnrog{
+	left: 1150px;
+	top: 170px;
+}
+.rogsupp{
+	left: 900px;
+	top: 170px;
+}
+.rogsup{
+  font-size: 14px;
+	text-align: center;
+	text-transform: uppercase;
+  margin: 20px auto;
+  color: white;
+  border-radius: 5px;
+	padding: 10px;
+	width: 80px;
+}
+
+
+/*/Телнфоны/*/
+
+.smartphone{
+	position: absolute;
+	top: 2360px;
+	background-image: url("images/65.jpg");
+  width: 100%;
+	height: 675px;
+	max-width: 100%;
+  background-size: cover;
+
+}
+.mi{
+	position: absolute;
+	left: 40%;
+	text-align: center;
+	font-size: 40px;
+	text-transform: uppercase;
+  background: #2E2F45;
+  display: table;
+  margin: 20px auto;
+  color: white;
+  border-radius: 5px;
+  mix-blend-mode: multiply;
+	padding: 10px;
+}
+.misup{
+	left: 750px;
+	top: 210px;
+}
+.misupbtnn{
+	text-align: center;
+	border: 1px solid #fff;
+	border-radius: 30px;
+	background-color: #fff;
+	font-size: 14px;
+	width: 100px;
+	padding-top: 12px;
+	padding-left: 40px;
+  padding-right: 40px;
+	padding-bottom: 12px;
+	text-decoration: none;
+	color: #000;
+
+}
+
+
+.misupp{
+	left: 550px;
+	top: 210px;
+}
+.misuppp{
+	text-decoration: underline;
+	color: #fff;
+}
+.misuppp:hover{
+	text-decoration: none;
+}
+
+
+	.bestsellers{
+position: absolute;
+top: 3250px;
+left: 35%;
+font-size: 50px;
+font-size: 50px;
+text-transform: uppercase;
+background: #2E2F45;
+display: table;
+margin: 20px auto;
+color: white;
+border-radius: 5px;
+mix-blend-mode: multiply;
+padding: 5px 10px;
+}
+
+
+
+/*/Характеристики /*/
+/*/1/*/
+.A{
+	left: 50px;
+	top: 3400px;
+	position: absolute;
+	width: 300px;
+	height: 670px;
+	background-color: #fff;
+
+}
+.Ah{
+	text-align: center;
+	color: #000;
+	font-size: 19px;
+	text-shadow: 5px 5px 17px black;
+}
+.a{
+	position: absolute;
+	left: 75px;
+	top: 70px;
+}
+.Ahhh{
+position: absolute;
+color: #000;
+font-size: 12px;
+top: 370px;
+}
+.colour_samsung{
+	position: absolute;
+	top: 530px;
+	left: 20px;
+  color: #000;
+
+}
+
+.colourblack{
+position: absolute;
+top: 550px;
+left: 100px;
+width: 20px;
+height: 20px;
+background: #000;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+.colourblue{
+position: absolute;
+top: 550px;
+left: 140px;
+width: 20px;
+height: 20px;
+background: #0050ee;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+.samsungprice{
+	position: absolute;
+	top: 600px;
+	left: 150px;
+	color: #000;
+	font-size: 20px;
+}
+
+.samsungbuy{
+border: 3px solid #000;
+padding: 10px;
+font-size: 13px;
+color: #000;
+}
+
+.samsungbuya{
+	position: absolute;
+	top: 610px;
+	width: 100px;
+	left: -20px;
+	text-decoration: none;
+	color: #000;
+}
+
+
+
+
+/*/2/*/
+.R{
+	left: 550px;
+	top: 3400px;
+	position: absolute;
+	width: 300px;
+	height: 670px;
+	background-color: #fff;
+}
+.Rh{
+	text-align: center;
+	color: #000;
+	font-size: 19px;
+	text-shadow: 5px 5px 17px black;
+}
+.ra{
+	position: absolute;
+	left: 70px;
+	top: 70px;
+}
+.Rhhh{
+position: absolute;
+color: #000;
+font-size: 12px;
+top: 400px;
+}
+.coloursamsung{
+	position: absolute;
+	top: 530px;
+	left: 20px;
+  color: #000;
+
+}
+
+.colourblack{
+position: absolute;
+top: 550px;
+left: 100px;
+width: 20px;
+height: 20px;
+background: #000;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+
+.colourblue{
+position: absolute;
+top: 550px;
+left: 140px;
+width: 20px;
+height: 20px;
+background: #0050ee;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+.colourred{
+	position: absolute;
+	top: 550px;
+	left: 180px;
+	width: 20px;
+	height: 20px;
+	background: #ff0000;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+}
+
+.oppoprice{
+	position: absolute;
+	top: 600px;
+	left: 150px;
+	color: #000;
+	font-size: 20px;
+}
+
+.oppobuy{
+border: 3px solid #000;
+padding: 10px;
+font-size: 13px;
+color: #000;
+}
+
+.oppobuya{
+	position: absolute;
+	top: 610px;
+	width: 100px;
+	left: -20px;
+	text-decoration: none;
+	color: #000;
+}
+
+
+
+/*/3/*/
+.H{
+	left: 1050px;
+	top: 3400px;
+	position: absolute;
+	width: 300px;
+	height: 650px;
+	background-color: #fff;
+}
+.Hh{
+	text-align: center;
+	color: #000;
+	font-size: 19px;
+	text-shadow: 5px 5px 17px black;
+}
+.ha{
+	position: absolute;
+	left: 70px;
+	top: 70px;
+}
+.Hhhh{
+position: absolute;
+color: #000;
+font-size: 12px;
+top: 400px;
+}
+.colourhonor{
+	position: absolute;
+	top: 530px;
+	left: 20px;
+  color: #000;
+
+}
+
+.colourblack{
+position: absolute;
+top: 550px;
+left: 100px;
+width: 20px;
+height: 20px;
+background: #000;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+
+.colourpurple{
+position: absolute;
+top: 550px;
+left: 140px;
+width: 20px;
+height: 20px;
+background: #ba00ff;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+.colourgreen{
+	position: absolute;
+	top: 550px;
+	left: 180px;
+	width: 20px;
+	height: 20px;
+	background: #00ff6e;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+}
+
+.honorprice{
+	position: absolute;
+	top: 600px;
+	left: 150px;
+	color: #000;
+	font-size: 20px;
+}
+
+.honorbuy{
+border: 3px solid #000;
+padding: 10px;
+font-size: 13px;
+color: #000;
+}
+
+.honorbuya{
+	position: absolute;
+	top: 610px;
+	width: 100px;
+	left: -20px;
+	text-decoration: none;
+	color: #000;
+}
+
+
+
+
+
+.topsales{
+	position: absolute;
+	top: 4100px;
+	left: 30%;
+	color: #000;
+	font-family: 'Raleway', sans-serif;
+	font-size: 50px;
+}
+
+
+
+.smartphone_info{
+	color: #000;
+	text-align: center;
+	font-size: 25px;
+}
+
+
+.kataloge_smartfone{
+	position: absolute;
+	top: 4300px;
+	width: 400px;
+	height: 350px;
+	left: 1050px;
+	border: none;
+	border-radius: 30px;
+	background-color: #bebebe;
+	font-family: 'Raleway', sans-serif;
+}
+.img_smartfone{
+	left: 120px;
+	position: absolute;
+}
+.kataloge_smartfone:hover .img_smartfone{
+	-webkit-transform: scale(1.2);
+	  -ms-transform: scale(1.2);
+	  transform: scale(1.2);
+}
+
+.smartphone_buy{
+	text-align: center;
+	border: 1px solid #fff;
+	border-radius: 30px;
+	background-color: #fff;
+	font-size: 14px;
+	width: 100px;
+	padding-top: 12px;
+	padding-left: 40px;
+  padding-right: 40px;
+	padding-bottom: 12px;
+	text-decoration: none;
+	color: #000;
+}
+.smartphone_buy_e{
+	position: absolute;
+	left: 90px;
+	top: 280px;
+	animation-fill-mode: forwards;
+	opacity: 0;
+
+}
+
+@keyframes scale {
+	from {
+      top: 200px;
+			opacity: 0.5;
+
+	}
+	to{
+		top: 280px;
+		opacity: 1;
+	}
+
+
+}
+.kataloge_smartfone:hover .smartphone_buy_e{
+
+		animation: scale 1s 1;
+		animation-fill-mode: forwards;
+}
+
+
+
+
+.TV_info{
+	color: #000;
+	text-align: center;
+	font-size: 25px;
+}
+
+
+.kataloge_TV_audio{
+	position: absolute;
+	top: 4300px;
+	width: 400px;
+	height: 350px;
+	left: 550px;
+	border: none;
+	border-radius: 30px;
+	background-color: #bebebe;
+	font-family: 'Raleway', sans-serif;
+}
+.img_TV{
+	left: 120px;
+	position: absolute;
+}
+.kataloge_TV_audio:hover .img_TV{
+	-webkit-transform: scale(1.2);
+	  -ms-transform: scale(1.2);
+	  transform: scale(1.2);
+}
+
+.TV_buy{
+	text-align: center;
+	border: 1px solid #fff;
+	border-radius: 30px;
+	background-color: #fff;
+	font-size: 14px;
+	width: 100px;
+	padding-top: 12px;
+	padding-left: 40px;
+  padding-right: 40px;
+	padding-bottom: 12px;
+	text-decoration: none;
+	color: #000;
+}
+.TV_buy_e{
+	position: absolute;
+	left: 90px;
+	top: 280px;
+	animation-fill-mode: forwards;
+	opacity: 0;
+
+}
+
+@keyframes scale_smartfone {
+	from {
+      top: 200px;
+			opacity: 0.5;
+
+	}
+	to{
+		top: 280px;
+		opacity: 1;
+	}
+
+
+}
+.kataloge_TV_audio:hover .TV_buy_e{
+
+		animation: scale_smartfone 1s 1;
+		animation-fill-mode: forwards;
+}
+
+
+.bit_info{
+	color: #000;
+	text-align: center;
+	font-size: 25px;
+}
+
+
+.kataloge_bit_tov{
+	position: absolute;
+	top: 4300px;
+	width: 400px;
+	height: 350px;
+	left: 50px;
+	border: none;
+	border-radius: 30px;
+	background-color: #bebebe;
+	font-family: 'Raleway', sans-serif;
+}
+.img_bit{
+	left: 120px;
+	position: absolute;
+}
+.kataloge_bit_tov:hover .img_bit{
+	-webkit-transform: scale(1.2);
+	  -ms-transform: scale(1.2);
+	  transform: scale(1.2);
+}
+
+.bit_buy{
+	text-align: center;
+	border: 1px solid #fff;
+	border-radius: 30px;
+	background-color: #fff;
+	font-size: 14px;
+	width: 100px;
+	padding-top: 12px;
+	padding-left: 40px;
+  padding-right: 40px;
+	padding-bottom: 12px;
+	text-decoration: none;
+	color: #000;
+}
+.bit_buy_e{
+	position: absolute;
+	left: 90px;
+	top: 280px;
+	animation-fill-mode: forwards;
+	opacity: 0;
+
+}
+
+@keyframes scale_smartfone {
+	from {
+      top: 200px;
+			opacity: 0.5;
+
+	}
+	to{
+		top: 280px;
+		opacity: 1;
+	}
+
+
+}
+.kataloge_bit_tov:hover .bit_buy_e{
+
+		animation: scale_smartfone 1s 1;
+		animation-fill-mode: forwards;
+}
+
+
+.footer{
+	position: absolute;
+	top: 5000px;
+	background-color: black;
+	width: 100%;
+	height: 500px;
+}
+.searching{
+	position: absolute;
+	left: 35%;
+	top: 30px;
+}
+.text{
+border: none;
+border-radius: 30px;
+width: 400px;
+height: 50px;
+font-size: 20px;
+
+}
+.searchbutton{
+	position: absolute;
+width: 30px;
+height: auto;
+top: 15px;
+left: 350px;
+
+}
+.firsttable{
+	position: absolute;
+	top: 150px;
+	width: 100%;
+	height: 200px;
+}
+
+
+.fiop{
+
+	top: 200px;
+	color: white;
+
+}
+.SP{
+	color: #fff;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	}
+	.AS{
+		color: #fff;
+		position: absolute;
+		top: 70px;
+		left: 30px;
+	}
+ .TA{
+	 color: #fff;
+	 position: absolute;
+	 top: 110px;
+	 left: 30px;
+ }
+ .NP{
+	 color: #fff;
+ 	position: absolute;
+ 	top: 150px;
+ 	left: 30px;
+ }
+ .BT{
+		 color: #fff;
+	 	position: absolute;
+	 	top: 190px;
+	 	left: 30px;
+ }
+ .SP:hover{
+	 text-decoration: underline;
+ }
+ .AS:hover{
+	 text-decoration: underline;
+ }
+ .TA:hover{
+	 text-decoration: underline;
+ }
+ .NP:hover{
+	 text-decoration: underline;
+ }
+ .BT:hover{
+	 text-decoration: underline;
+ }
+
+ .call{
+   top: 30px;
+   left: 300px;
+   position: absolute;
+   color: #fff;
+ }
+ .help{
+   top: 70px;
+   left: 300px;
+   position: absolute;
+   color: #fff;
+ }
+ .orderr{
+   top: 110px;
+   left: 300px;
+   position: absolute;
+   color: #fff;
+ }
+ .back{
+   top: 150px;
+   left: 300px;
+   position: absolute;
+   color: #fff;
+ }
+ .partner{
+   top: 180px;
+   left: 300px;
+   position: absolute;
+   color: #fff;
+ }
+ .call:hover{
+   text-decoration: underline;
+ }
+ .help:hover{
+   text-decoration: underline;
+ }
+ .orderr:hover{
+   text-decoration: underline;
+ }
+ .back:hover{
+   text-decoration: underline;
+ }
+ .partner:hover{
+   text-decoration: underline;
+ }
+
+
+.rules{
+	position: absolute;
+	left: 20px;
+  color: #fff;
+	font-size: 10px;
+}
+
+
+
+
+.tent{
+color: #fff;
+}
+
+ .visit{
+	 position: absolute;
+	 top: 400px;
+	 width: 100%;
+	 height: 100px;
+ }
+
+ .VK{
+	 position: absolute;
+	 left:1200px;
+	 top: 50px;
+ }
+ .YouTube{
+	 position: absolute;
+	 left:1300px;
+	 top: 50px;
+ }
+ .Instgram{
+	 position: absolute;
+	 left:1350px;
+	 top: 45px;
+ }
+ .FaceBook{
+	 position: absolute;
+	 left:1250px;
+	 top: 50px;
+ }
+}
+
+@media only screen and (min-width: 1824px)
+{
+
+.header{
+top: 0px;
+left: 0px;
+height: 70px;
+width: 100%;
+position:absolute;
+height: 100px;
+position: fixed;
+background: #fbfbfb;
+z-index: 4;
+
+}
+
+
+
+
+
+
+
+.log{
+position: absolute;
+width: 40px;
+height: auto;
+left: 50px;
+font-size: 28px;
+line-height: 33px;
+text-align: center;
+letter-spacing: 0.03em;
+color: #000;
+border: 5px solid black;
+box-shadow: 5px 5px 5px ,black;
+color: #fff;
+background-color: black;
+border-radius: 5px;
+box-shadow: 5px 5px 17px black;
+}
+.logo{
+
+position: absolute;
+top: 5px;
+width: 150px;
+height: 42px;
+left: 110px;
+text-shadow: 5px 5px 17px black;
+font-size: 28px;
+line-height: 33px;
+text-align: center;
+letter-spacing: 0.03em;
+color: #000;
+}
+.GL{
+position: absolute;
+width: 70px;
+font-size: 13px;
+text-align: center;
+box-shadow: 5px 5px 17px black;
+color: #fff;
+left: 500px;
+padding: 10px;
+background-color: #000;
+border-radius: 15px;
+top: 3px;
+}
+.GL:hover{
+  color: #000;
+  background-color: #fff;
+}
+
+.TV{
+position: absolute;
+width: 70px;
+font-size: 13px;
+text-align: center;
+box-shadow: 5px 5px 17px black;
+color: #fff;
+left: 700px;
+padding: 10px;
+background-color: #000;
+border-radius: 15px;
+top:3px;
+}
+.TV:hover{
+  color: #000;
+  background-color: #fff;
+}
+
+.PM{
+position: absolute;
+width: 70px;
+font-size: 13px;
+text-align: center;
+box-shadow: 5px 5px 17px black;
+color: #fff;
+left: 900px;
+padding: 10px;
+background-color: #000;
+border-radius: 15px;
+top: 3px;
+}
+.PM:hover{
+  color: #000;
+  background-color: #fff;
+}
+.shop{
+  position: absolute;
+  left: 1400px;
+}
+.shop:hover{
+  border-bottom: 3px solid #000;
+}
+.search{
+  position: absolute;
+  left: 1350px;
+  top: 2px;
+}
+.search:hover{
+  border-bottom: 3px solid #000;
+
+}
+.user{
+  position: absolute;
+  left: 1290px;
+  top: -2px;
+}
+.user:hover{
+  border-bottom: 3px solid #000;
+}
+
+
+
+
+
+.one{
+	background-image: url("images/88.jpg");
+	height: 450px;
+	width: 100%;
+}
+
+}
+.two{
+	background-image: url("images/87.jpg");
+	height: 500px;
+
+	width: 100%;
+}
+
+.three{
+	background-image: url("images/85.jpg");
+  object-fit: cover;
+	height: 450px;
+	width:100%;
+}
+
+.four{
+	background-image: url("images/84.jpg");
+	height: 450px;
+  object-fit: cover;
+	width: 100%;
+}
+
+.slider {
+      position: relative;
+      overflow: hidden;
+			width: 100%;
+      object-fit: cover;
+			top: 50px;
+    }
+.slider__wrapper {
+      display: flex;
+      transition: transform 0.9s ease;
+    }
+
+.slider__item {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  .slider__control {
+      position: absolute;
+      top: 45%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      color: #fff;
+      text-align: center;
+      opacity: 0.5;
+      height: 50px;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, .5);
+    }
+
+    .slider__control:hover,
+    .slider__control:focus {
+      color: #fff;
+      text-decoration: none;
+      outline: 0;
+      opacity: .9;
+    }
+
+    .slider__control_left {
+      left: 0;
+    }
+
+    .slider__control_right {
+      right: 0;
+    }
+
+    .slider__control::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: transparent no-repeat center center;
+      background-size: 100% 100%;
+    }
+
+    .slider__control_left::before {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    }
+
+    .slider__control_right::before {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    }
+
+    .slider__item>div {
+      line-height: 250px;
+      font-size: 100px;
+      text-align: center;
+    }
+
+
+
+
+
+
+/*/Преимущества/*/
+.quality{
+	top: -30px;
+	position: absolute;
+	max-width: 100%;
+	color: black;
+	background-color: #c8c8c8;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.discount{
+position: absolute;
+width: 70px;
+height: auto;
+left: 100px;
+top: 600px;
+border: 4px solid #c8c8c8;
+background-color: #c8c8c8;
+padding: 40px;
+padding-top: 100px;
+border-radius: 30px;
+box-shadow: 5px 5px 17px black;
+}
+.forquality{
+	position: absolute;
+	top: 615px;
+	left: 140px;
+	text-align: center;
+}
+.discounts{
+color: black;
+}
+
+.twoquality{
+	position: absolute;
+	top: 615px;
+	left: 670px;
+	text-align: center;
+}
+
+.order{
+	position: absolute;
+	width: 70px;
+	height: auto;
+	left: 630px;
+	top: 600px;
+	border: 4px solid #c8c8c8;
+	background-color: #c8c8c8;
+	padding: 40px;
+	padding-top: 100px;
+	border-radius: 30px;
+	box-shadow: 5px 5px 17px black;
+}
+.orders{
+	color: black;
+}
+.gh{
+	position: absolute;
+	width: 70px;
+	height: auto;
+	left: 1230px;
+	top: 600px;
+	border: 4px solid #c8c8c8;
+	background-color: #c8c8c8;
+	padding: 40px;
+	padding-top: 100px;
+	border-radius: 30px;
+	box-shadow: 5px 5px 17px black;
+}
+.gj{
+	position: absolute;
+	top: 615px;
+	left: 1280px;
+	text-align: center;
+}
+.gk{
+color: #000;
+}
+
+
+/*/TV/*/
+.type{
+	position: absolute;
+	top: 860px;
+	background-image: url("images/34.jpg");
+	width: 100%;
+  background-size: cover;
+  float: right;
+  object-fit: cover;
+	height: 790px;
+
+}
+
+.TTVV{
+position: absolute;
+left: 620px;
+color: #fbfbfb;
+font-size: 35px;
+font-family: 'Montserrat', sans-serif;
+letter-spacing: 10px;
+
+}
+
+.TTVVBUY{
+	text-align: center;
+	top: 200px;
+	left: 750px;
+	border: 1px solid #fff;
+	border-radius: 30px;
+	background-color: #fff;
+	font-size: 14px;
+	padding-right: 17px;
+}
+.TTVVbuy{
+	text-decoration: none;
+	text-align: center;
+	color: black;
+}
+
+.sup{
+	left: 550px;
+	top: 210px;
+}
+.supp{
+	text-decoration: underline;
+	color: #fff;
+}
+.supp:hover{
+	text-decoration: none;
+}
+
+
+
+/*/Ноутбук/*/
+.nout{
+	position: absolute;
+	top: 1650px;
+	background-image: url("images/02.jpg");
+	width: 100%;
+  background-size: cover;
+
+	height: 800px;
+}
+.rog{
+	text-align: center;
+	font-size: 40px;
+  margin: 20px auto;
+  color: white;
+
+}
+
+.ROG{
+	font-size: 14px;
+	text-align: center;
+	text-transform: uppercase;
+  display: table;
+  margin: 20px auto;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid #fff;
+	padding: 10px;
+	width: 80px;
+}
+
+.btnnrog{
+	left: 1150px;
+	top: 170px;
+}
+.rogsupp{
+	left: 900px;
+	top: 170px;
+}
+.rogsup{
+	font-size: 14px;
+	text-align: center;
+	text-transform: uppercase;
+  background-color: #000;
+  display: table;
+  margin: 20px auto;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+	padding: 10px;
+}
+
+
+/*/Телнфоны/*/
+
+.smartphone{
+	position: absolute;
+	top: 2450px;
+	background-image: url("images/65.jpg");
+	width:100%;
+	height: 675px;
+  background-size: cover;
+}
+.mi{
+	position: absolute;
+	left: 40%;
+	text-align: center;
+	font-size: 40px;
+	text-transform: uppercase;
+  background: #2E2F45;
+  display: table;
+  margin: 20px auto;
+  color: white;
+  border-radius: 5px;
+  mix-blend-mode: multiply;
+	padding: 10px;
+}
+.misup{
+	left: 750px;
+	top: 210px;
+}
+.misupbtnn{
+	text-align: center;
+	border: 1px solid #fff;
+	border-radius: 30px;
+	background-color: #fff;
+	font-size: 14px;
+	width: 100px;
+	padding-top: 12px;
+	padding-left: 40px;
+  padding-right: 40px;
+	padding-bottom: 12px;
+	text-decoration: none;
+	color: #000;
+
+}
+
+
+.misupp{
+	left: 550px;
+	top: 210px;
+}
+.misuppp{
+	text-decoration: underline;
+	color: #fff;
+}
+.misuppp:hover{
+	text-decoration: none;
+}
+
+
+	.bestsellers{
+position: absolute;
+top: 3250px;
+left: 35%;
+font-size: 50px;
+font-size: 50px;
+text-transform: uppercase;
+background: #2E2F45;
+display: table;
+margin: 20px auto;
+color: white;
+border-radius: 5px;
+mix-blend-mode: multiply;
+padding: 5px 10px;
+}
+
+
+
+/*/Характеристики /*/
+/*/1/*/
+.A{
+	left: 50px;
+	top: 3400px;
+	position: absolute;
+	width: 300px;
+	height: 670px;
+	background-color: #fff;
+
+}
+.Ah{
+	text-align: center;
+	color: #000;
+	font-size: 19px;
+	text-shadow: 5px 5px 17px black;
+}
+.a{
+	position: absolute;
+	left: 75px;
+	top: 70px;
+}
+.Ahhh{
+position: absolute;
+color: #000;
+font-size: 12px;
+top: 370px;
+}
+.colour_samsung{
+	position: absolute;
+	top: 530px;
+	left: 20px;
+  color: #000;
+
+}
+
+.colourblack{
+position: absolute;
+top: 550px;
+left: 100px;
+width: 20px;
+height: 20px;
+background: #000;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+.colourblue{
+position: absolute;
+top: 550px;
+left: 140px;
+width: 20px;
+height: 20px;
+background: #0050ee;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+.samsungprice{
+	position: absolute;
+	top: 600px;
+	left: 150px;
+	color: #000;
+	font-size: 20px;
+}
+
+.samsungbuy{
+border: 3px solid #000;
+padding: 10px;
+font-size: 13px;
+color: #000;
+}
+
+.samsungbuya{
+	position: absolute;
+	top: 610px;
+	width: 100px;
+	left: -20px;
+	text-decoration: none;
+	color: #000;
+}
+
+
+
+
+/*/2/*/
+.R{
+	left: 550px;
+	top: 3400px;
+	position: absolute;
+	width: 300px;
+	height: 670px;
+	background-color: #fff;
+}
+.Rh{
+	text-align: center;
+	color: #000;
+	font-size: 19px;
+	text-shadow: 5px 5px 17px black;
+}
+.ra{
+	position: absolute;
+	left: 70px;
+	top: 70px;
+}
+.Rhhh{
+position: absolute;
+color: #000;
+font-size: 12px;
+top: 400px;
+}
+.coloursamsung{
+	position: absolute;
+	top: 530px;
+	left: 20px;
+  color: #000;
+
+}
+
+.colourblack{
+position: absolute;
+top: 550px;
+left: 100px;
+width: 20px;
+height: 20px;
+background: #000;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+
+.colourblue{
+position: absolute;
+top: 550px;
+left: 140px;
+width: 20px;
+height: 20px;
+background: #0050ee;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+.colourred{
+	position: absolute;
+	top: 550px;
+	left: 180px;
+	width: 20px;
+	height: 20px;
+	background: #ff0000;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+}
+
+.oppoprice{
+	position: absolute;
+	top: 600px;
+	left: 150px;
+	color: #000;
+	font-size: 20px;
+}
+
+.oppobuy{
+border: 3px solid #000;
+padding: 10px;
+font-size: 13px;
+color: #000;
+}
+
+.oppobuya{
+	position: absolute;
+	top: 610px;
+	width: 100px;
+	left: -20px;
+	text-decoration: none;
+	color: #000;
+}
+
+
+
+/*/3/*/
+.H{
+	left: 1050px;
+	top: 3400px;
+	position: absolute;
+	width: 300px;
+	height: 650px;
+	background-color: #fff;
+}
+.Hh{
+	text-align: center;
+	color: #000;
+	font-size: 19px;
+	text-shadow: 5px 5px 17px black;
+}
+.ha{
+	position: absolute;
+	left: 70px;
+	top: 70px;
+}
+.Hhhh{
+position: absolute;
+color: #000;
+font-size: 12px;
+top: 400px;
+}
+.colourhonor{
+	position: absolute;
+	top: 530px;
+	left: 20px;
+  color: #000;
+
+}
+
+.colourblack{
+position: absolute;
+top: 550px;
+left: 100px;
+width: 20px;
+height: 20px;
+background: #000;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+
+.colourpurple{
+position: absolute;
+top: 550px;
+left: 140px;
+width: 20px;
+height: 20px;
+background: #ba00ff;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+.colourgreen{
+	position: absolute;
+	top: 550px;
+	left: 180px;
+	width: 20px;
+	height: 20px;
+	background: #00ff6e;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+}
+
+.honorprice{
+	position: absolute;
+	top: 600px;
+	left: 150px;
+	color: #000;
+	font-size: 20px;
+}
+
+.honorbuy{
+border: 3px solid #000;
+padding: 10px;
+font-size: 13px;
+color: #000;
+}
+
+.honorbuya{
+	position: absolute;
+	top: 610px;
+	width: 100px;
+	left: -20px;
+	text-decoration: none;
+	color: #000;
+}
+
+
+
+
+
+.topsales{
+	position: absolute;
+	top: 4100px;
+	left: 30%;
+	color: #000;
+	font-family: 'Raleway', sans-serif;
+	font-size: 50px;
+}
+
+
+
+.smartphone_info{
+	color: #000;
+	text-align: center;
+	font-size: 25px;
+}
+
+
+.kataloge_smartfone{
+	position: absolute;
+	top: 4300px;
+	width: 400px;
+	height: 350px;
+	left: 1050px;
+	border: none;
+	border-radius: 30px;
+	background-color: #bebebe;
+	font-family: 'Raleway', sans-serif;
+}
+.img_smartfone{
+	left: 120px;
+	position: absolute;
+}
+.kataloge_smartfone:hover .img_smartfone{
+	-webkit-transform: scale(1.2);
+	  -ms-transform: scale(1.2);
+	  transform: scale(1.2);
+}
+
+.smartphone_buy{
+	text-align: center;
+	border: 1px solid #fff;
+	border-radius: 30px;
+	background-color: #fff;
+	font-size: 14px;
+	width: 100px;
+	padding-top: 12px;
+	padding-left: 40px;
+  padding-right: 40px;
+	padding-bottom: 12px;
+	text-decoration: none;
+	color: #000;
+}
+.smartphone_buy_e{
+	position: absolute;
+	left: 90px;
+	top: 280px;
+	animation-fill-mode: forwards;
+	opacity: 0;
+
+}
+
+@keyframes scale {
+	from {
+      top: 200px;
+			opacity: 0.5;
+
+	}
+	to{
+		top: 280px;
+		opacity: 1;
+	}
+
+
+}
+.kataloge_smartfone:hover .smartphone_buy_e{
+
+		animation: scale 1s 1;
+		animation-fill-mode: forwards;
+}
+
+
+
+
+.TV_info{
+	color: #000;
+	text-align: center;
+	font-size: 25px;
+}
+
+
+.kataloge_TV_audio{
+	position: absolute;
+	top: 4300px;
+	width: 400px;
+	height: 350px;
+	left: 550px;
+	border: none;
+	border-radius: 30px;
+	background-color: #bebebe;
+	font-family: 'Raleway', sans-serif;
+}
+.img_TV{
+	left: 120px;
+	position: absolute;
+}
+.kataloge_TV_audio:hover .img_TV{
+	-webkit-transform: scale(1.2);
+	  -ms-transform: scale(1.2);
+	  transform: scale(1.2);
+}
+
+.TV_buy{
+	text-align: center;
+	border: 1px solid #fff;
+	border-radius: 30px;
+	background-color: #fff;
+	font-size: 14px;
+	width: 100px;
+	padding-top: 12px;
+	padding-left: 40px;
+  padding-right: 40px;
+	padding-bottom: 12px;
+	text-decoration: none;
+	color: #000;
+}
+.TV_buy_e{
+	position: absolute;
+	left: 90px;
+	top: 280px;
+	animation-fill-mode: forwards;
+	opacity: 0;
+
+}
+
+@keyframes scale_smartfone {
+	from {
+      top: 200px;
+			opacity: 0.5;
+
+	}
+	to{
+		top: 280px;
+		opacity: 1;
+	}
+
+
+}
+.kataloge_TV_audio:hover .TV_buy_e{
+
+		animation: scale_smartfone 1s 1;
+		animation-fill-mode: forwards;
+}
+
+
+.bit_info{
+	color: #000;
+	text-align: center;
+	font-size: 25px;
+}
+
+
+.kataloge_bit_tov{
+	position: absolute;
+	top: 4300px;
+	width: 400px;
+	height: 350px;
+	left: 50px;
+	border: none;
+	border-radius: 30px;
+	background-color: #bebebe;
+	font-family: 'Raleway', sans-serif;
+}
+.img_bit{
+	left: 120px;
+	position: absolute;
+}
+.kataloge_bit_tov:hover .img_bit{
+	-webkit-transform: scale(1.2);
+	  -ms-transform: scale(1.2);
+	  transform: scale(1.2);
+}
+
+.bit_buy{
+	text-align: center;
+	border: 1px solid #fff;
+	border-radius: 30px;
+	background-color: #fff;
+	font-size: 14px;
+	width: 100px;
+	padding-top: 12px;
+	padding-left: 40px;
+  padding-right: 40px;
+	padding-bottom: 12px;
+	text-decoration: none;
+	color: #000;
+}
+.bit_buy_e{
+	position: absolute;
+	left: 90px;
+	top: 280px;
+	animation-fill-mode: forwards;
+	opacity: 0;
+
+}
+
+@keyframes scale_smartfone {
+	from {
+      top: 200px;
+			opacity: 0.5;
+
+	}
+	to{
+		top: 280px;
+		opacity: 1;
+	}
+
+
+}
+.kataloge_bit_tov:hover .bit_buy_e{
+
+		animation: scale_smartfone 1s 1;
+		animation-fill-mode: forwards;
+}
+
+
+.footer{
+	position: absolute;
+	top: 5000px;
+	background-color: black;
+	width: 100%;
+	height: 500px;
+}
+.searching{
+	position: absolute;
+	left: 35%;
+	top: 30px;
+}
+.text{
+border: none;
+border-radius: 30px;
+width: 400px;
+height: 50px;
+font-size: 20px;
+
+}
+.searchbutton{
+	position: absolute;
+width: 30px;
+height: auto;
+top: 15px;
+left: 350px;
+
+}
+.firsttable{
+	position: absolute;
+	top: 150px;
+	width: 100%;
+	height: 200px;
+}
+
+
+.fiop{
+
+	top: 200px;
+	color: white;
+
+}
+.SP{
+	color: #fff;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	}
+	.AS{
+		color: #fff;
+		position: absolute;
+		top: 70px;
+		left: 30px;
+	}
+ .TA{
+	 color: #fff;
+	 position: absolute;
+	 top: 110px;
+	 left: 30px;
+ }
+ .NP{
+	 color: #fff;
+ 	position: absolute;
+ 	top: 150px;
+ 	left: 30px;
+ }
+ .BT{
+		 color: #fff;
+	 	position: absolute;
+	 	top: 190px;
+	 	left: 30px;
+ }
+ .SP:hover{
+	 text-decoration: underline;
+ }
+ .AS:hover{
+	 text-decoration: underline;
+ }
+ .TA:hover{
+	 text-decoration: underline;
+ }
+ .NP:hover{
+	 text-decoration: underline;
+ }
+ .BT:hover{
+	 text-decoration: underline;
+ }
+
+
+.rules{
+	position: absolute;
+	left: 20px;
+  color: #fff;
+	font-size: 10px;
+}
+
+
+
+
+.tent{
+color: #fff;
+}
+
+ .visit{
+	 position: absolute;
+	 top: 400px;
+	 width: 100%;
+	 height: 100px;
+ }
+
+ .VK{
+	 position: absolute;
+	 left:1200px;
+	 top: 50px;
+ }
+ .YouTube{
+	 position: absolute;
+	 left:1300px;
+	 top: 50px;
+ }
+ .Instgram{
+	 position: absolute;
+	 left:1350px;
+	 top: 45px;
+ }
+ .FaceBook{
+	 position: absolute;
+	 left:1250px;
+	 top: 50px;
+ }
+}

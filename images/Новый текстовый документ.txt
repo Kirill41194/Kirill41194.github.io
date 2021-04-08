@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HP</title>
+    <link rel="icon" type="image/ico" sizes="32x32" href="images/favicon.ico">
+<link rel="icon" type="image/ico" sizes="16x16" href="images/favicon.ico">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="log">HP</h1>
+        <h1 class="logo">Happy PC</h1>
+        <ul>
+          <li><a href="#" class="GL">Главная</a></li>
+        </ul>
+        <ul>
+          <li><a href="#" class="TV">Товары</a></li>
+        </ul>
+        <ul>
+          <li><a href="#" class="PM">Помощь</a></li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <img class="shop" src="images/9.png" alt="Карзина">
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <img class="search" src="images/12.png" alt="search">
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <img class="user" src="images/11.png" alt="user">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <section class="slider">
+      <div class="slider">
+    <div class="slider__wrapper">
+      <div class="slider__item">
+        <a href="https://www.honor.ru/promo.html?utm_campaign=honor_eshop_support_q4_ys_ps&utm_medium=cpc&utm_source=yandex&utm_content=51271486_4302081362_10005726302&utm_term=онор%2030_22273523795&yclid=7447201793468554530"><div class="one"></div></a>
+      </div>
+      <div class="slider__item">
+        <a href="https://www.honor.ru/product/honor-pad-v6?utm_campaign=honor_eshop_support_q4_ys_ps&utm_medium=cpc&utm_source=yandex&utm_content=55374630_4318679152_10005744310&utm_term=онор%20пад_22562839040&yclid=7447244060446196976"><div class="three"></div></a>
+      </div>
+      <div class="slider__item">
+        <a href="https://www.asus.com/ru/Tablets/ASUS_VivoTab/"><div class="four"></div></a>
+      </div>
+    </div>
+    <a class="slider__control slider__control_left" href="#" role="button"></a>
+    <a class="slider__control slider__control_right slider__control_show" href="#" role="button"></a>
+  </div>
+  <script>
+    'use strict';
+    var multiItemSlider = (function () {
+      return function (selector, config) {
+        var
+          _mainElement = document.querySelector(selector), // основный элемент блока
+          _sliderWrapper = _mainElement.querySelector('.slider__wrapper'), // обертка для .slider-item
+          _sliderItems = _mainElement.querySelectorAll('.slider__item'), // элементы (.slider-item)
+          _sliderControls = _mainElement.querySelectorAll('.slider__control'), // элементы управления
+          _sliderControlLeft = _mainElement.querySelector('.slider__control_left'), // кнопка "LEFT"
+          _sliderControlRight = _mainElement.querySelector('.slider__control_right'), // кнопка "RIGHT"
+          _wrapperWidth = parseFloat(getComputedStyle(_sliderWrapper).width), // ширина обёртки
+          _itemWidth = parseFloat(getComputedStyle(_sliderItems[0]).width), // ширина одного элемента
+          _positionLeftItem = 0, // позиция левого активного элемента
+          _transform = 0, // значение транфсофрмации .slider_wrapper
+          _step = _itemWidth / _wrapperWidth * 100, // величина шага (для трансформации)
+          _items = [], // массив элементов
+          _interval = 0,
+          _config = {
+            isCycling: false, // автоматическая смена слайдов
+            direction: 'right', // направление смены слайдов
+            interval: 10000, // интервал между автоматической сменой слайдов
+            pause: true // устанавливать ли паузу при поднесении курсора к слайдеру
+          };
+
+        for (var key in config) {
+          if (key in _config) {
+            _config[key] = config[key];
+          }
+        }
+
+        // наполнение массива _items
+        _sliderItems.forEach(function (item, index) {
+          _items.push({ item: item, position: index, transform: 0 });
+        });
+
+        var position = {
+          getItemMin: function () {
+            var indexItem = 0;
+            _items.forEach(function (item, index) {
+              if (item.position < _items[indexItem].position) {
+                indexItem = index;
+              }
+            });
+            return indexItem;
+          },
+          getItemMax: function () {
+            var indexItem = 0;
+            _items.forEach(function (item, index) {
+              if (item.position > _items[indexItem].position) {
+                indexItem = index;
+              }
+            });
+            return indexItem;
+          },
+          getMin: function () {
+            return _items[position.getItemMin()].position;
+          },
+          getMax: function () {
+            return _items[position.getItemMax()].position;
+          }
+        }
+
+        var _transformItem = function (direction) {
+          var nextItem;
+          if (direction === 'right') {
+            _positionLeftItem++;
+            if ((_positionLeftItem + _wrapperWidth / _itemWidth - 1) > position.getMax()) {
+              nextItem = position.getItemMin();
+              _items[nextItem].position = position.getMax() + 1;
+              _items[nextItem].transform += _items.length * 100;
+              _items[nextItem].item.style.transform = 'translateX(' + _items[nextItem].transform + '%)';
+            }
+            _transform -= _step;
+          }
+          if (direction === 'left') {
+            _positionLeftItem--;
+            if (_positionLeftItem < position.getMin()) {
+              nextItem = position.getItemMax();
+              _items[nextItem].position = position.getMin() - 1;
+              _items[nextItem].transform -= _items.length * 100;
+              _items[nextItem].item.style.transform = 'translateX(' + _items[nextItem].transform + '%)';
+            }
+            _transform += _step;
+          }
+          _sliderWrapper.style.transform = 'translateX(' + _transform + '%)';
+        }
+
+        var _cycle = function (direction) {
+          if (!_config.isCycling) {
+            return;
+          }
+          _interval = setInterval(function () {
+            _transformItem(direction);
+          }, _config.interval);
+        }
+
+        // обработчик события click для кнопок "назад" и "вперед"
+        var _controlClick = function (e) {
+          if (e.target.classList.contains('slider__control')) {
+            e.preventDefault();
+            var direction = e.target.classList.contains('slider__control_right') ? 'right' : 'left';
+            _transformItem(direction);
+            clearInterval(_interval);
+            _cycle(_config.direction);
+          }
+        };
+
+        var _setUpListeners = function () {
+          // добавление к кнопкам "назад" и "вперед" обрботчика _controlClick для событя click
+          _sliderControls.forEach(function (item) {
+            item.addEventListener('click', _controlClick);
+          });
+          if (_config.pause && _config.isCycling) {
+            _mainElement.addEventListener('mouseenter', function () {
+              clearInterval(_interval);
+            });
+            _mainElement.addEventListener('mouseleave', function () {
+              clearInterval(_interval);
+              _cycle(_config.direction);
+            });
+          }
+        }
+
+        // инициализация
+        _setUpListeners();
+        _cycle(_config.direction);
+
+        return {
+          right: function () { // метод right
+            _transformItem('right');
+          },
+          left: function () { // метод left
+            _transformItem('left');
+          },
+          stop: function () { // метод stop
+            _config.isCycling = false;
+            clearInterval(_interval);
+          },
+          cycle: function () { // метод cycle
+            _config.isCycling = true;
+            clearInterval(_interval);
+            _cycle();
+          }
+        }
+
+      }
+    }());
+
+    var slider = multiItemSlider('.slider', {
+      isCycling: true
+    })
+
+  </script>
+  </section>
+  <section class="quality">
+<ul>
+  <li>
+    <img class="discount" src="images/10.png" alt="images/10.png">
+  </li>
+</ul>
+<ul>
+  <a class="discounts" href="#"><li class="forquality"><b>Скидки на все товары Samsung</b></li></a>
+</ul>
+<ul>
+  <li>
+    <img class="order" src="images/0.png" alt="images/0.png">
+  </li>
+</ul>
+<ul>
+  <a class="orders" href="#"><li class="twoquality"><b>Доставка по всей России</b></li></a>
+</ul>
+<ul>
+  <li>
+    <img class="gh" src="images/19.png" alt="images/10.png">
+  </li>
+</ul>
+<ul>
+  <a class="gk" href="#"><li class="gj"><b>Уже 5 лет на рынке!</b></li></a>
+</ul>
+  </section>
+
+
+<section class="type">
+      <div>
+     <b><h1 class="TTVV">QLED 8K</h1></b>
+    <ul class="TTVVBUY">
+      <h1 class="TTVVBUY"><a class="TTVVbuy" href="#">Купить</a></h1>
+    </ul>
+      <ul class="sup">
+        <li>
+          <a class="supp" href="#">Подробнее</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+<section class="nout">
+<h1 class="rog">Mi Gaming Laptop</h1>
+<ul class="btnnrog">
+  <li>
+    <a class="ROG" href="#">Купить</a>
+  </li>
+</ul>
+<ul class="rogsupp">
+<li>
+  <a class="rogsup" href="#">Подробнее</a>
+</li>
+</ul>
+</section>
+
+<section  class="smartphone">
+<h1 class="mi">MI Note 10</h1>
+<ul class="misup">
+  <li>
+    <a class="misupbtnn" href="#"><b>Купить</b></a>
+  </li>
+</ul>
+<ul class="misupp">
+  <li>
+    <a class="misuppp" href="#">Подробнее</a>
+  </li>
+</ul>
+</section>
+
+
+<h1 class="bestsellers">Бестселлеры</h1>
+
+
+ <section class=A>
+ <h1 class="Ah">Samsung Galaxy A80</h1>
+<img  class="a"  src="images/78.jpg" alt="">
+<h3 class="Ahhh">
+    Процессор: 2200 Мгц (8-ядерный).
+    Память: 128 Гб, 8 Гб RAM.
+    Платформа: Android 9.0.
+    Аккумулятор: 3700 мА*ч Li-Ion.
+    Экран: 6.7", сенсорный, 2400x1080.
+    Камера: 48 мпикс, 9238x5196.
+    Вид: Моноблок, 219 г, 165.2x76.5x9.3 мм.</h3>
+    <a  href="#">
+      <li class="colourblack"></li>
+    </a>
+    <a  href="#">
+      <li class="colourblue"></li>
+    </a>
+    <h4 class="coloursamsung">Цвет:</h4>
+    <h4 class="samsungprice">29 990 руб.</h4>
+     <ul class="samsungbuya" >
+       <li>
+         <a class="samsungbuy" href="#">В Карзину</a>
+       </li>
+     </ul>
+</section>
+
+
+ <section class="R">
+   <h1 class="Rh">Oppo A9</h1>
+   <img height="300" width="150"  class="ra"  src="images/56.jpg" alt="">
+   <h3 class="Rhhh">
+      Процессор: Snapdragon 665 (8×1.8-2 ГГц, 11 нм).
+      Память: 128 Гб, 4 Гб RAM.
+      Платформа: Android 9.0.
+      Аккумулятор: 5000 мА*ч Li-Ion.
+      Экран: 6.5″, IPS, HD+ (1600×720 px).
+      Камера: 48 мпикс.
+    </h3>
+      <a  href="#">
+        <li class="colourblack"></li>
+      </a>
+      <a  href="#">
+        <li class="colourblue"></li>
+      </a>
+      <a  href="#">
+        <li class="colourred"></li>
+      </a>
+
+      <h4 class="coloursamsung">Цвет:</h4>
+      <h4 class="oppoprice">15 990 руб.</h4>
+       <ul class="oppobuya" >
+         <li>
+           <a class="oppobuy" href="#">В Карзину</a>
+         </li>
+       </ul>
+ </section>
+
+ <section class="H">
+   <h1 class="Hh">Honor 30i</h1>
+   <img height="300" width="190"  class="ha"  src="images/69.jpg" alt="">
+   <h3 class="Hhhh">
+      Процессор: Kirin 710F.
+      Память: 128 Гб, 4 Гб RAM.
+      Платформа: Android 9.0.
+      Аккумулятор: 4000 мА*ч Li-Ion.
+      Экран: 6.3″, IPS, (2400x1080).
+      Камера: 48 мпикс.
+    </h3>
+      <a  href="#">
+        <li class="colourblack"></li>
+      </a>
+      <a  href="#">
+        <li class="colourpurple"></li>
+      </a>
+      <a  href="#">
+        <li class="colourgreen"></li>
+      </a>
+
+      <h4 class="colourhonor">Цвет:</h4>
+      <h4 class="honorprice">17 990 руб.</h4>
+       <ul class="honorbuya" >
+         <li>
+           <a class="honorbuy" href="#">В Карзину</a>
+         </li>
+       </ul>
+ </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+<section class="searching">
+  <form action="#">
+    <input class="text" placeholder="Ищете что-то ещё?" type="text"  name="search">
+    <a href="#">
+      <img class="searchbutton" src="images/12.png" alt="">
+    </a>
+  </form>
+</section>
+
+<section class="firsttable">
+  <hr class="fiop">
+  <a class="SP" href="#">Смартфоны и Планшеты</a>
+  <a class="AS"href="#">Аксессуары</a>
+  <a class="TA" href="#">ТВ и Аудио</a>
+  <a class="NP" href="#">Ноутбуки и ПК</a>
+</section>
+
+<section class="visit">
+<a class="VK" href="#">
+  <img height="auto" width="40px" class="vk" src="images/3.png" alt="">
+</a>
+<a class="FaceBook" href="#">
+  <img height="auto" width="40px" class="facebook" src="images/2.png" alt="">
+</a>
+<a class="YouTube" href="#">
+  <img height="auto" width="40px" class="youtube" src="images/5.png" alt="">
+</a>
+<a class="Instgram" href="#">
+  <img height="auto" width="50px" class="instagram" src="images/1.png" alt="">
+</a>
+</section>
+
+
+
+
+
+
+
+
+
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+body{
+
+font-family: 'Work Sans', sans-serif;
+	width: 100vh;
+	height: 90vh;
+	color: #fff;
+
+}
+a{
+text-decoration: none;
+}
+ul {
+  display: flex;
+  position: absolute;
+}
+li{
+  display: inline-block;
+}
+.header{
+
+height: 70px;
+width: 100%;
+
+}
+
+
+.log{
+position: absolute;
+width: 40px;
+height: auto;
+left: 50px;
+font-size: 28px;
+line-height: 33px;
+text-align: center;
+letter-spacing: 0.03em;
+color: #000;
+border: 5px solid black;
+box-shadow: 5px 5px 5px ,black;
+color: #fff;
+background-color: black;
+border-radius: 5px;
+box-shadow: 5px 5px 17px black;
+}
+.logo{
+
+position: absolute;
+top: 10px;
+width: 150px;
+height: 42px;
+left: 110px;
+text-shadow: 5px 5px 17px black;
+font-size: 28px;
+line-height: 33px;
+text-align: center;
+letter-spacing: 0.03em;
+color: #000;
+}
+.GL{
+position: absolute;
+width: 70px;
+font-size: 13px;
+text-align: center;
+box-shadow: 5px 5px 17px black;
+color: #fff;
+left: 500px;
+padding: 10px;
+background-color: #000;
+border-radius: 15px;
+top: 10px;
+}
+.GL:hover{
+  color: #000;
+  background-color: #fff;
+}
+
+.TV{
+position: absolute;
+width: 70px;
+font-size: 13px;
+text-align: center;
+box-shadow: 5px 5px 17px black;
+color: #fff;
+left: 700px;
+padding: 10px;
+background-color: #000;
+border-radius: 15px;
+top: 10px;
+}
+.TV:hover{
+  color: #000;
+  background-color: #fff;
+}
+
+.PM{
+position: absolute;
+width: 70px;
+font-size: 13px;
+text-align: center;
+box-shadow: 5px 5px 17px black;
+color: #fff;
+left: 900px;
+padding: 10px;
+background-color: #000;
+border-radius: 15px;
+top: 10px;
+}
+.PM:hover{
+  color: #000;
+  background-color: #fff;
+}
+.shop{
+  position: absolute;
+  left: 1400px;
+  width: 35px;
+  height: auto;
+}
+.shop:hover{
+  border-bottom: 3px solid #000;
+  width: 35px;
+}
+.search{
+  position: absolute;
+  left: 1350px;
+  width: 32px;
+  height: auto;
+  top: 2px;
+}
+.search:hover{
+  border-bottom: 3px solid #000;
+
+}
+.user{
+  position: absolute;
+  left: 1290px;
+  width: 39px;
+  height: auto;
+  top: -2px;
+}
+.user:hover{
+  border-bottom: 3px solid #000;
+}
+
+
+
+
+
+.one{
+	background-image: url("images/88.jpg");
+	height: 450px;
+	width: 100%;
+}
+
+}
+.two{
+	background-image: url("images/87.jpg");
+	height: 450px;
+	width: 100%;
+}
+
+.three{
+	background-image: url("images/85.jpg");
+	height: 450px;
+	width: 100%;
+}
+
+.four{
+	background-image: url("images/84.jpg");
+	height: 450px;
+	width: 100%;
+}
+
+.slider {
+      position: relative;
+      overflow: hidden;
+			width: 1475px;
+			top: 20px;
+    }
+.slider__wrapper {
+      display: flex;
+      transition: transform 0.9s ease;
+    }
+
+.slider__item {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  .slider__control {
+      position: absolute;
+      top: 45%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      color: #fff;
+      text-align: center;
+      opacity: 0.5;
+      height: 50px;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, .5);
+    }
+
+    .slider__control:hover,
+    .slider__control:focus {
+      color: #fff;
+      text-decoration: none;
+      outline: 0;
+      opacity: .9;
+    }
+
+    .slider__control_left {
+      left: 0;
+    }
+
+    .slider__control_right {
+      right: 0;
+    }
+
+    .slider__control::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: transparent no-repeat center center;
+      background-size: 100% 100%;
+    }
+
+    .slider__control_left::before {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    }
+
+    .slider__control_right::before {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    }
+
+    .slider__item>div {
+      line-height: 250px;
+      font-size: 100px;
+      text-align: center;
+    }
+
+
+
+
+
+
+/*/Преимущества/*/
+.quality{
+	top: 10px;
+	position: absolute;
+	max-width: 100%;
+	color: black;
+	background-color: #c8c8c8;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.discount{
+position: absolute;
+width: 70px;
+height: auto;
+left: 100px;
+top: 600px;
+border: 4px solid #c8c8c8;
+background-color: #c8c8c8;
+padding: 40px;
+padding-top: 100px;
+border-radius: 30px;
+box-shadow: 5px 5px 17px black;
+}
+.forquality{
+	position: absolute;
+	top: 615px;
+	left: 140px;
+	text-align: center;
+}
+.discounts{
+color: black;
+}
+
+.twoquality{
+	position: absolute;
+	top: 615px;
+	left: 670px;
+	text-align: center;
+}
+
+.order{
+	position: absolute;
+	width: 70px;
+	height: auto;
+	left: 630px;
+	top: 600px;
+	border: 4px solid #c8c8c8;
+	background-color: #c8c8c8;
+	padding: 40px;
+	padding-top: 100px;
+	border-radius: 30px;
+	box-shadow: 5px 5px 17px black;
+}
+.orders{
+	color: black;
+}
+.gh{
+	position: absolute;
+	width: 70px;
+	height: auto;
+	left: 1230px;
+	top: 600px;
+	border: 4px solid #c8c8c8;
+	background-color: #c8c8c8;
+	padding: 40px;
+	padding-top: 100px;
+	border-radius: 30px;
+	box-shadow: 5px 5px 17px black;
+}
+.gj{
+	position: absolute;
+	top: 615px;
+	left: 1280px;
+	text-align: center;
+}
+.gk{
+color: #000;
+}
+
+
+/*/TV/*/
+.type{
+	position: absolute;
+	top: 900px;
+	background-image: url("images/34.jpg");
+	width: 1440px;
+	max-width: 100%;
+	height: 790px;
+
+}
+
+.TTVV{
+	position: absolute;
+left: 640px;
+color: #fff;
+font-size: 40px;
+
+}
+
+.TTVVBUY{
+	text-align: center;
+	top: 200px;
+	left: 750px;
+	border: 1px solid #fff;
+	border-radius: 30px;
+	background-color: #fff;
+	font-size: 14px;
+	padding-right: 17px;
+}
+.TTVVbuy{
+	text-decoration: none;
+	text-align: center;
+	color: black;
+}
+
+.sup{
+	left: 550px;
+	top: 210px;
+}
+.supp{
+	text-decoration: underline;
+	color: #fff;
+}
+.supp:hover{
+	text-decoration: none;
+}
+
+
+
+/*/Ноутбук/*/
+.nout{
+	position: absolute;
+	top: 1650px;
+	background-image: url("images/75.jpg");
+	width: 1440px;
+	max-width: 100%;
+	height: 920px;
+}
+.rog{
+	text-align: center;
+	font-size: 40px;
+  margin: 20px auto;
+  color: white;
+
+}
+
+.ROG{
+	font-size: 14px;
+	text-align: center;
+	text-transform: uppercase;
+  background: #2E2F45;
+  display: table;
+  margin: 20px auto;
+  color: white;
+  border-radius: 5px;
+  mix-blend-mode: multiply;
+	padding: 10px;
+	width: 80px;
+}
+
+.btnnrog{
+	left: 750px;
+	top: 170px;
+}
+.rogsupp{
+	left: 500px;
+	top: 170px;
+}
+.rogsup{
+	font-size: 14px;
+	text-align: center;
+	text-transform: uppercase;
+  background: #2E2F45;
+  display: table;
+  margin: 20px auto;
+  color: white;
+  border-radius: 5px;
+  mix-blend-mode: multiply;
+	padding: 10px;
+}
+
+
+/*/Телнфоны/*/
+
+.smartphone{
+	position: absolute;
+	top: 2560px;
+	background-image: url("images/65.jpg");
+	width: 1440px;
+	height: 675px;
+	max-width: 100%;
+}
+.mi{
+	position: absolute;
+	left: 40%;
+	text-align: center;
+	font-size: 40px;
+	text-transform: uppercase;
+  background: #2E2F45;
+  display: table;
+  margin: 20px auto;
+  color: white;
+  border-radius: 5px;
+  mix-blend-mode: multiply;
+	padding: 10px;
+}
+.misup{
+	left: 750px;
+	top: 210px;
+}
+.misupbtnn{
+	text-align: center;
+	border: 1px solid #fff;
+	border-radius: 30px;
+	background-color: #fff;
+	font-size: 14px;
+	width: 100px;
+	padding-top: 12px;
+	padding-left: 40px;
+  padding-right: 40px;
+	padding-bottom: 12px;
+
+}
+.misupbtnn{
+	text-decoration: none;
+	color: #000;
+}
+
+.misupp{
+	left: 550px;
+	top: 210px;
+}
+.misuppp{
+	text-decoration: underline;
+	color: #fff;
+}
+.misuppp:hover{
+	text-decoration: none;
+}
+
+
+	.bestsellers{
+position: absolute;
+top: 3250px;
+left: 35%;
+font-size: 50px;
+font-size: 50px;
+text-transform: uppercase;
+background: #2E2F45;
+display: table;
+margin: 20px auto;
+color: white;
+border-radius: 5px;
+mix-blend-mode: multiply;
+padding: 5px 10px;
+}
+
+
+
+/*/Характеристики /*/
+/*/1/*/
+.A{
+	left: 50px;
+	top: 3400px;
+	position: absolute;
+	width: 300px;
+	height: 670px;
+	background-color: #fff;
+
+}
+.Ah{
+	text-align: center;
+	color: #000;
+	font-size: 19px;
+	text-shadow: 5px 5px 17px black;
+}
+.a{
+	position: absolute;
+	left: 75px;
+	top: 70px;
+}
+.Ahhh{
+position: absolute;
+color: #000;
+font-size: 12px;
+white-space: pre-wrap;
+top: 400px;
+}
+.coloursamsung{
+	position: absolute;
+	top: 530px;
+	left: 20px;
+  color: #000;
+
+}
+
+.colourblack{
+position: absolute;
+top: 550px;
+left: 100px;
+width: 20px;
+height: 20px;
+background: #000;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+.colourblue{
+position: absolute;
+top: 550px;
+left: 140px;
+width: 20px;
+height: 20px;
+background: #0050ee;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+.samsungprice{
+	position: absolute;
+	top: 600px;
+	left: 150px;
+	color: #000;
+	font-size: 20px;
+}
+
+.samsungbuy{
+border: 3px solid #000;
+padding: 12px;
+font-size: 13px;
+color: #000;
+}
+
+.samsungbuya{
+	position: absolute;
+	top: 610px;
+	width: 100px;
+	left: -20px;
+	text-decoration: none;
+	color: #000;
+}
+
+
+
+
+/*/2/*/
+.R{
+	left: 550px;
+	top: 3400px;
+	position: absolute;
+	width: 300px;
+	height: 670px;
+	background-color: #fff;
+}
+.Rh{
+	text-align: center;
+	color: #000;
+	font-size: 19px;
+	text-shadow: 5px 5px 17px black;
+}
+.ra{
+	position: absolute;
+	left: 70px;
+	top: 70px;
+}
+.Rhhh{
+position: absolute;
+color: #000;
+font-size: 12px;
+top: 400px;
+}
+.coloursamsung{
+	position: absolute;
+	top: 530px;
+	left: 20px;
+  color: #000;
+
+}
+
+.colourblack{
+position: absolute;
+top: 550px;
+left: 100px;
+width: 20px;
+height: 20px;
+background: #000;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+
+.colourblue{
+position: absolute;
+top: 550px;
+left: 140px;
+width: 20px;
+height: 20px;
+background: #0050ee;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+.colourred{
+	position: absolute;
+	top: 550px;
+	left: 180px;
+	width: 20px;
+	height: 20px;
+	background: #ff0000;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+}
+
+.oppoprice{
+	position: absolute;
+	top: 600px;
+	left: 150px;
+	color: #000;
+	font-size: 20px;
+}
+
+.oppobuy{
+border: 3px solid #000;
+padding: 12px;
+font-size: 13px;
+color: #000;
+}
+
+.oppobuya{
+	position: absolute;
+	top: 610px;
+	width: 100px;
+	left: -20px;
+	text-decoration: none;
+	color: #000;
+}
+
+
+
+/*/3/*/
+.H{
+	left: 1050px;
+	top: 3400px;
+	position: absolute;
+	width: 300px;
+	height: 650px;
+	background-color: #fff;
+}
+.Hh{
+	text-align: center;
+	color: #000;
+	font-size: 19px;
+	text-shadow: 5px 5px 17px black;
+}
+.ha{
+	position: absolute;
+	left: 70px;
+	top: 70px;
+}
+.Hhhh{
+position: absolute;
+color: #000;
+font-size: 12px;
+top: 400px;
+}
+.colourhonor{
+	position: absolute;
+	top: 530px;
+	left: 20px;
+  color: #000;
+
+}
+
+.colourblack{
+position: absolute;
+top: 550px;
+left: 100px;
+width: 20px;
+height: 20px;
+background: #000;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+
+.colourpurple{
+position: absolute;
+top: 550px;
+left: 140px;
+width: 20px;
+height: 20px;
+background: #ba00ff;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+.colourgreen{
+	position: absolute;
+	top: 550px;
+	left: 180px;
+	width: 20px;
+	height: 20px;
+	background: #00ff6e;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+}
+
+.honorprice{
+	position: absolute;
+	top: 600px;
+	left: 150px;
+	color: #000;
+	font-size: 20px;
+}
+
+.honorbuy{
+border: 3px solid #000;
+padding: 12px;
+font-size: 13px;
+color: #000;
+}
+
+.honorbuya{
+	position: absolute;
+	top: 610px;
+	width: 100px;
+	left: -20px;
+	text-decoration: none;
+	color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+	position: absolute;
+	top: 7000px;
+	background-color: black;
+	width: 100%;
+	height: 500px;
+}
+.searching{
+	position: absolute;
+	left: 35%;
+	top: 30px;
+}
+.text{
+border: none;
+border-radius: 30px;
+width: 400px;
+height: 50px;
+font-size: 20px;
+
+}
+.searchbutton{
+	position: absolute;
+width: 30px;
+height: auto;
+top: 15px;
+left: 350px;
+
+}
+.firsttable{
+	position: absolute;
+	top: 150px;
+	width: 100%;
+	height: 200px;
+}
+
+
+.fiop{
+
+	top: 200px;
+	color: white;
+
+}
+.SP{
+	color: #fff;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	}
+	.AS{
+		color: #fff;
+		position: absolute;
+		top: 70px;
+		left: 30px;
+	}
+ .TA{
+	 color: #fff;
+	 position: absolute;
+	 top: 110px;
+	 left: 30px;
+ }
+ .NP{
+	 color: #fff;
+ 	position: absolute;
+ 	top: 150px;
+ 	left: 30px;
+ }
+ .SP:hover{
+	 text-decoration: underline;
+ }
+ .AS:hover{
+	 text-decoration: underline;
+ }
+ .TA:hover{
+	 text-decoration: underline;
+ }
+ .NP:hover{
+	 text-decoration: underline;
+ }
+
+
+
+
+
+
+ .visit{
+	 position: absolute;
+	 top: 400px;
+	 width: 100%;
+	 height: 100px;
+ }
+
+ .VK{
+	 position: absolute;
+	 left:1200px;
+	 top: 50px;
+ }
+ .YouTube{
+	 position: absolute;
+	 left:1300px;
+	 top: 50px;
+ }
+ .Instgram{
+	 position: absolute;
+	 left:1350px;
+	 top: 45px;
+ }
+ .FaceBook{
+	 position: absolute;
+	 left:1250px;
+	 top: 50px;
+ }
+
+
+
+
+
+
